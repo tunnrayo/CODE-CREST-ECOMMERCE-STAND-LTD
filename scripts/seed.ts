@@ -1,6 +1,6 @@
 /**
- * Idempotent seed: categories, all 125 catalogue products, illustration
- * images with source metadata, default settings, shipping zone, promotions
+ * Idempotent seed: categories, all 125 catalogue products, product
+ * images (data/image-manifest.json) with source metadata, default settings, shipping zone, promotions
  * and draft policies. Safe to run repeatedly — existing records are matched
  * by stable keys (category slug, product catalogue key/SKU) and NOT duplicated.
  *
@@ -13,7 +13,8 @@ import fs from "node:fs";
 import path from "node:path";
 import { and, eq, sql } from "drizzle-orm";
 import { getDb, getPool } from "../src/server/db";
-import { categories, policyPages, productImages, products, promotions, shippingMethods, shippingZones, storeSettings } from "../src/server/db/schema";
+import { applyImages } from "./apply-images";
+import { categories, policyPages, products, promotions, shippingMethods, shippingZones, storeSettings } from "../src/server/db/schema";
 import { CATEGORY_DEFS } from "../src/lib/catalogue-rules";
 import { DEFAULT_SETTINGS } from "../src/server/services/settings";
 import { POLICY_SEED } from "../data/policies";
@@ -40,7 +41,6 @@ async function main() {
 
   let created = 0;
   let existing = 0;
-  let imagesAdded = 0;
   for (const r of catalogue) {
     const categoryId = catIds.get(r.categorySlug)!;
     const keywords = [r.categoryName, ...r.name.toLowerCase().split(/[^a-z0-9]+/)].filter(Boolean).join(" ");
@@ -92,26 +92,6 @@ async function main() {
       }
     }
 
-    const [hasImage] = await db.select({ id: productImages.id }).from(productImages).where(eq(productImages.productId, productId)).limit(1);
-    const illustration = `/products/${r.slug}.webp`;
-    if (!hasImage && fs.existsSync(path.join(process.cwd(), "public", illustration))) {
-      await db.insert(productImages).values({
-        productId,
-        url: illustration,
-        altText: `${r.name} — Code Crest product illustration`,
-        isPrimary: true,
-        position: 0,
-        width: 800,
-        height: 800,
-        sourceType: "ORIGINAL_ILLUSTRATION",
-        sourceName: "Code Crest (generated with Phosphor Icons, MIT licence)",
-        sourcePageUrl: "https://phosphoricons.com",
-        licenseStatus: "OWNED",
-        verificationStatus: "PENDING",
-        notes: "Illustrative image, not a photograph of the actual product. Replace with a verified supplier/manufacturer photo before launch.",
-      });
-      imagesAdded++;
-    }
   }
 
   // Settings (only insert missing keys — never overwrite admin changes)
@@ -149,8 +129,10 @@ async function main() {
     await db.insert(policyPages).values({ ...p, isReviewed: false }).onConflictDoNothing();
   }
 
+  const img = await applyImages();
   const [{ total }] = await db.select({ total: sql<number>`count(*)::int` }).from(products).where(sql`${products.catalogueKey} is not null`);
-  console.log(`✓ Seed complete — catalogue products in DB: ${total} (created ${created}, already present ${existing}${sync ? ", synced" : ""}); images added: ${imagesAdded}`);
+  console.log(`✓ Images linked: ${img.linked}; products using the placeholder: ${img.withoutImage}`);
+  console.log(`✓ Seed complete — catalogue products in DB: ${total} (created ${created}, already present ${existing}${sync ? ", synced" : ""})`);
   await getPool().end();
 }
 

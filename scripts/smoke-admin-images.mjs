@@ -1,0 +1,47 @@
+// Admin image management: upload to a product with no image, see it on the storefront, then delete it again.
+import { chromium } from "playwright";
+import sharp from "sharp";
+import fs from "node:fs";
+const base = process.env.BASE ?? "http://localhost:3002";
+const results = [];
+const check = (n, c, x = "") => { results.push(c); console.log(c ? "PASS" : "FAIL", n, x); };
+const tmp = "/tmp/cc-test-upload.png";
+await sharp({ create: { width: 600, height: 400, channels: 3, background: { r: 104, g: 15, b: 36 } } }).png().toFile(tmp);
+const browser = await chromium.launch({ executablePath: process.env.CHROMIUM_PATH || undefined });
+const page = await (await browser.newContext({ viewport: { width: 1360, height: 1000 } })).newPage();
+await page.goto(base + "/admin/login");
+await page.fill('input[name="email"]', process.env.ADMIN_EMAIL);
+await page.fill('input[name="password"]', process.env.ADMIN_PASSWORD);
+await Promise.all([page.waitForURL(/\/admin(?!\/login)/), page.click('button[type="submit"]')]);
+await page.goto(base + "/admin/products?q=Insulated+Kids+Water+Bottle");
+const href = await page.locator('a[href^="/admin/products/"]').evaluateAll((as) => as.map((a) => a.getAttribute("href")).find((h) => /products\/[0-9a-f-]{36}/.test(h)));
+await page.goto(base + href, { waitUntil: "networkidle" });
+check("product with no image shows zero managed images", /Images \(0\)/.test(await page.locator("main").innerText()));
+await page.setInputFiles("#up-file", tmp);
+await page.selectOption("#up-st", "ADMIN_UPLOAD");
+await page.fill("#up-sn", "Smoke test file");
+await page.locator('[data-testid="image-upload-form"] button[type="submit"]').click();
+await page.waitForURL(/ok=/, { timeout: 20000 }).catch(() => {});
+await page.goto(base + href, { waitUntil: "networkidle" });
+const txt = await page.locator("main").innerText();
+check("upload succeeded and is listed", /Images \(1\)/.test(txt), txt.match(/Images \(\d+\)/)?.[0]);
+const src = await page.locator('main img').first().getAttribute("src");
+const res = await fetch(base + "/product/insulated-kids-water-bottle");
+const html = await res.text();
+check("storefront now serves an uploaded /media image", /media%2F|\/media\//.test(html));
+// rejects a non-image
+fs.writeFileSync("/tmp/cc-fake.png", "not really an image");
+await page.setInputFiles("#up-file", "/tmp/cc-fake.png");
+await page.fill("#up-sn", "bad file");
+await page.locator('[data-testid="image-upload-form"] button[type="submit"]').click();
+await page.waitForURL(/error=/, { timeout: 20000 }).catch(() => {});
+check("fake image is rejected", /error=/.test(page.url()), decodeURIComponent(page.url().split("error=")[1] ?? "").slice(0, 80));
+// delete the test image
+await page.goto(base + href, { waitUntil: "networkidle" });
+await page.getByRole("button", { name: /^Delete$/ }).first().click();
+await page.waitForURL(/ok=/, { timeout: 20000 }).catch(() => {});
+await page.goto(base + href, { waitUntil: "networkidle" });
+check("test image deleted; placeholder again", /Images \(0\)/.test(await page.locator("main").innerText()));
+await browser.close();
+console.log(`${results.filter(Boolean).length}/${results.length} passed`);
+process.exit(results.every(Boolean) ? 0 : 1);

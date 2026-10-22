@@ -9,17 +9,20 @@ A full-stack online store: public storefront, customer accounts, cart, checkout,
 ## Stack
 Next.js 15 (App Router) · React 19 · TypeScript (strict) · Tailwind CSS · PostgreSQL 16 · Drizzle ORM + SQL migrations · argon2 · zod · sharp · vitest · Playwright (smoke scripts).
 
-## Quick start
+## Quick start (VS Code, port 3002)
+Requirements: Node.js 20+, PostgreSQL 14+, VS Code.
 ```bash
-cp .env.example .env            # fill in DATABASE_URL, SESSION_SECRET, ADMIN_* (see below)
+# 1. open the folder:  File > Open Folder... > Code-Crest-Ecommerce-Complete   (or: code .)
+# 2. create the database (once). Use your own password.
+psql -U postgres -c "create role codecrest login password 'CHOOSE_A_PASSWORD'" -c "create database codecrest owner codecrest"
+# 3. configure
+cp .env.example .env            # then edit .env: DATABASE_URL, SESSION_SECRET, ADMIN_EMAIL, ADMIN_PASSWORD
 npm install
-npm run db:migrate              # applies /drizzle migrations
-npm run db:seed                 # 125 products from data/catalogue.json, categories, policies (idempotent)
-npm run admin:create            # creates/updates the administrator from ADMIN_EMAIL / ADMIN_PASSWORD
-npm run dev                     # http://localhost:3000   (admin: /admin)
+npm run setup                   # migrate + seed (125 products + images) + create the admin
+npm run dev                     # http://localhost:3002   (admin: http://localhost:3002/admin)
 ```
-Production: `npm run build && npm start`. A one-shot `npm run setup` runs migrate + seed + admin:create.
-Local Postgres example: `createdb codecrest` or run any PostgreSQL 14+ and point `DATABASE_URL` at it.
+On Windows use PowerShell (`copy .env.example .env`). Run `npm run images:verify`, `npm run catalogue:verify`, `npm run typecheck`, `npm run lint` and `npm test` (start the dev server first for the HTTP tests, or set `TEST_BASE_URL`) to check the install.
+Production: `npm run build && npm start` (also port 3002; override with `PORT`).
 
 ### Administrator password
 The admin password is **never stored in source code**. Put it in your local `.env` as `ADMIN_PASSWORD` and run `npm run admin:create`; it is hashed with argon2 in the database. `.env` is git-ignored. Rotate it by editing `.env` and re-running the command. Change it before going live.
@@ -41,12 +44,12 @@ All **125 products** come from the supplied catalogue document (`data/source/…
 | Email (Resend) | Outbox implemented. Without `RESEND_API_KEY`/`EMAIL_FROM` messages are stored as `NOT_CONFIGURED`; none are sent. |
 | Suppliers | Adapter interface + manual adapter. No supplier API is connected; none is pre-loaded. See `docs/SUPPLIER_INTEGRATIONS.md`. |
 | Delivery | Zones/methods are admin-configured. The seeded Nigeria method has an **unconfirmed** fee shown as "to be confirmed". |
-| Product images | Original Code Crest illustrations (licence: owned, verification: pending). Replace with real photos via Admin → product → Images; see `docs/IMAGE_VERIFICATION.md`. |
+| Product images | 88 of 125 products use images cropped from the catalogue boards you supplied (permission: permitted, verification: pending; not supplier photos). The other 37 show a neutral “Image coming soon” placeholder. No generated illustrations are used. Per-product detail: `docs/IMAGE_AUDIT.md`. Replace or add images in Admin → product → Images (`docs/IMAGE_VERIFICATION.md`). |
 | Policies | Drafts with `[bracketed]` gaps. Need legal review before launch. |
 | Rate limiting | In-memory (single instance). Use a shared store (Redis) if you run multiple instances. |
 
 ## Scripts
-`dev`, `build`, `start`, `lint`, `typecheck`, `test` (unit + HTTP API tests; API tests skip if no server is running at `TEST_BASE_URL`, default `http://localhost:3000`), `db:generate`, `db:migrate`, `db:seed`, `admin:create`, `images:generate`, `catalogue:verify`.
+`dev`, `build`, `start`, `lint`, `typecheck`, `test` (unit + HTTP API tests; API tests skip if no server is running at `TEST_BASE_URL`, default `http://localhost:3002`), `db:generate`, `db:migrate`, `db:seed`, `admin:create`, `images:apply` (re-link images to products), `images:verify` (audit; `-- --write` refreshes `docs/IMAGE_AUDIT.md`), `catalogue:verify`.
 Smoke scripts: `node scripts/smoke-store.mjs`, `node scripts/smoke-admin.mjs` (Playwright; need a running server and Chromium).
 
 ## Deployment

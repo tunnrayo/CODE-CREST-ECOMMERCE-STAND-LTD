@@ -1,0 +1,706 @@
+[
+ {
+  "sku": "CC-BAB-002",
+  "file": "/products/CC-BAB-002.webp",
+  "board": "kids",
+  "boardIndex": 6,
+  "boardLabel": "Kids Backpack",
+  "match": "similar"
+ },
+ {
+  "sku": "CC-SPO-001",
+  "file": "/products/CC-SPO-001.webp",
+  "board": "kids",
+  "boardIndex": 14,
+  "boardLabel": "Yoga Mat",
+  "match": "exact"
+ },
+ {
+  "sku": "CC-ELE-001",
+  "file": "/products/CC-ELE-001.webp",
+  "board": "elec",
+  "boardIndex": 1,
+  "boardLabel": "Wireless Bluetooth Earbuds",
+  "match": "exact"
+ },
+ {
+  "sku": "CC-ELE-002",
+  "file": "/products/CC-ELE-002.webp",
+  "board": "elec",
+  "boardIndex": 2,
+  "boardLabel": "Bluetooth Over-Ear Headphones",
+  "match": "exact"
+ },
+ {
+  "sku": "CC-ELE-003",
+  "file": "/products/CC-ELE-003.webp",
+  "board": "elec",
+  "boardIndex": 3,
+  "boardLabel": "Portable Bluetooth Speaker",
+  "match": "exact"
+ },
+ {
+  "sku": "CC-ELE-004",
+  "file": "/products/CC-ELE-004.webp",
+  "board": "elec",
+  "boardIndex": 4,
+  "boardLabel": "Smart Fitness Band",
+  "match": "exact"
+ },
+ {
+  "sku": "CC-ELE-005",
+  "file": "/products/CC-ELE-005.webp",
+  "board": "elec",
+  "boardIndex": 5,
+  "boardLabel": "Smart Watch",
+  "match": "exact"
+ },
+ {
+  "sku": "CC-ELE-006",
+  "file": "/products/CC-ELE-006.webp",
+  "board": "elec",
+  "boardIndex": 6,
+  "boardLabel": "USB-C Fast Charging Adapter",
+  "match": "exact"
+ },
+ {
+  "sku": "CC-ELE-007",
+  "file": "/products/CC-ELE-007.webp",
+  "board": "elec",
+  "boardIndex": 7,
+  "boardLabel": "USB-C Charging Cable",
+  "match": "exact"
+ },
+ {
+  "sku": "CC-ELE-008",
+  "file": "/products/CC-ELE-008.webp",
+  "board": "elec",
+  "boardIndex": 8,
+  "boardLabel": "Multi-Port USB Charging Hub",
+  "match": "exact"
+ },
+ {
+  "sku": "CC-ELE-009",
+  "file": "/products/CC-ELE-009.webp",
+  "board": "elec",
+  "boardIndex": 9,
+  "boardLabel": "20,000mAh Power Bank",
+  "match": "exact"
+ },
+ {
+  "sku": "CC-ELE-010",
+  "file": "/products/CC-ELE-010.webp",
+  "board": "elec",
+  "boardIndex": 10,
+  "boardLabel": "10,000mAh Power Bank",
+  "match": "exact"
+ },
+ {
+  "sku": "CC-ELE-011",
+  "file": "/products/CC-ELE-011.webp",
+  "board": "elec",
+  "boardIndex": 11,
+  "boardLabel": "Wireless Charging Pad",
+  "match": "exact"
+ },
+ {
+  "sku": "CC-ELE-012",
+  "file": "/products/CC-ELE-012.webp",
+  "board": "elec",
+  "boardIndex": 12,
+  "boardLabel": "Laptop Cooling Stand",
+  "match": "exact"
+ },
+ {
+  "sku": "CC-ELE-016",
+  "file": "/products/CC-ELE-016.webp",
+  "board": "elec",
+  "boardIndex": 13,
+  "boardLabel": "Webcam with Microphone",
+  "match": "similar"
+ },
+ {
+  "sku": "CC-ELE-023",
+  "file": "/products/CC-ELE-023.webp",
+  "board": "elec",
+  "boardIndex": 15,
+  "boardLabel": "Surge Protector Extension Socket",
+  "match": "similar"
+ },
+ {
+  "sku": "CC-HOM-001",
+  "file": "/products/CC-HOM-001.webp",
+  "board": "home",
+  "boardIndex": 1,
+  "boardLabel": "Non-Stick Frying Pan",
+  "match": "exact"
+ },
+ {
+  "sku": "CC-HOM-002",
+  "file": "/products/CC-HOM-002.webp",
+  "board": "home",
+  "boardIndex": 2,
+  "boardLabel": "Stainless Steel Cooking Pot Set",
+  "match": "exact"
+ },
+ {
+  "sku": "CC-HOM-003",
+  "file": "/products/CC-HOM-003.webp",
+  "board": "home",
+  "boardIndex": 3,
+  "boardLabel": "Food Storage Container Set",
+  "match": "exact"
+ },
+ {
+  "sku": "CC-HOM-004",
+  "file": "/products/CC-HOM-004.webp",
+  "board": "home",
+  "boardIndex": 4,
+  "boardLabel": "Insulated Water Bottle 1L",
+  "match": "exact"
+ },
+ {
+  "sku": "CC-HOM-005",
+  "file": "/products/CC-HOM-005.webp",
+  "board": "home",
+  "boardIndex": 5,
+  "boardLabel": "Electric Kettle",
+  "match": "exact"
+ },
+ {
+  "sku": "CC-HOM-006",
+  "file": "/products/CC-HOM-006.webp",
+  "board": "home",
+  "boardIndex": 6,
+  "boardLabel": "French Press Coffee Maker",
+  "match": "exact"
+ },
+ {
+  "sku": "CC-HOM-007",
+  "file": "/products/CC-HOM-007.webp",
+  "board": "home",
+  "boardIndex": 7,
+  "boardLabel": "Manual Vegetable Chopper",
+  "match": "exact"
+ },
+ {
+  "sku": "CC-HOM-008",
+  "file": "/products/CC-HOM-008.webp",
+  "board": "home",
+  "boardIndex": 8,
+  "boardLabel": "Knife and Cutting Board Set",
+  "match": "exact"
+ },
+ {
+  "sku": "CC-HOM-009",
+  "file": "/products/CC-HOM-009.webp",
+  "board": "home",
+  "boardIndex": 9,
+  "boardLabel": "Digital Food Thermometer",
+  "match": "exact"
+ },
+ {
+  "sku": "CC-HOM-010",
+  "file": "/products/CC-HOM-010.webp",
+  "board": "home",
+  "boardIndex": 10,
+  "boardLabel": "Silicone Cooking Utensil Set",
+  "match": "exact"
+ },
+ {
+  "sku": "CC-HOM-011",
+  "file": "/products/CC-HOM-011.webp",
+  "board": "home",
+  "boardIndex": 11,
+  "boardLabel": "Microwave-Safe Bowl Set",
+  "match": "exact"
+ },
+ {
+  "sku": "CC-HOM-012",
+  "file": "/products/CC-HOM-012.webp",
+  "board": "home",
+  "boardIndex": 12,
+  "boardLabel": "Dish Drying Rack",
+  "match": "exact"
+ },
+ {
+  "sku": "CC-HOM-013",
+  "file": "/products/CC-HOM-013.webp",
+  "board": "home",
+  "boardIndex": 13,
+  "boardLabel": "Bathroom Storage Shelf",
+  "match": "exact"
+ },
+ {
+  "sku": "CC-HOM-014",
+  "file": "/products/CC-HOM-014.webp",
+  "board": "home",
+  "boardIndex": 14,
+  "boardLabel": "Laundry Hamper",
+  "match": "exact"
+ },
+ {
+  "sku": "CC-HOM-015",
+  "file": "/products/CC-HOM-015.webp",
+  "board": "home",
+  "boardIndex": 15,
+  "boardLabel": "Microfibre Cleaning Cloth Pack",
+  "match": "exact"
+ },
+ {
+  "sku": "CC-HOM-016",
+  "file": "/products/CC-HOM-016.webp",
+  "board": "home",
+  "boardIndex": 16,
+  "boardLabel": "Cordless Handheld Vacuum",
+  "match": "exact"
+ },
+ {
+  "sku": "CC-HOM-017",
+  "file": "/products/CC-HOM-017.webp",
+  "board": "home",
+  "boardIndex": 17,
+  "boardLabel": "Bedside Table Lamp",
+  "match": "exact"
+ },
+ {
+  "sku": "CC-HOM-018",
+  "file": "/products/CC-HOM-018.webp",
+  "board": "home",
+  "boardIndex": 18,
+  "boardLabel": "Blackout Window Curtains",
+  "match": "exact"
+ },
+ {
+  "sku": "CC-HOM-019",
+  "file": "/products/CC-HOM-019.webp",
+  "board": "home",
+  "boardIndex": 19,
+  "boardLabel": "Decorative Cushion Cover Set",
+  "match": "exact"
+ },
+ {
+  "sku": "CC-HOM-020",
+  "file": "/products/CC-HOM-020.webp",
+  "board": "home",
+  "boardIndex": 20,
+  "boardLabel": "Foldable Storage Bins",
+  "match": "exact"
+ },
+ {
+  "sku": "CC-HOM-021",
+  "file": "/products/CC-HOM-021.webp",
+  "board": "home",
+  "boardIndex": 21,
+  "boardLabel": "Digital Bathroom Scale",
+  "match": "exact"
+ },
+ {
+  "sku": "CC-HOM-022",
+  "file": "/products/CC-HOM-022.webp",
+  "board": "home",
+  "boardIndex": 22,
+  "boardLabel": "Reusable Food Wrap Set",
+  "match": "exact"
+ },
+ {
+  "sku": "CC-HOM-023",
+  "file": "/products/CC-HOM-023.webp",
+  "board": "home",
+  "boardIndex": 23,
+  "boardLabel": "Airtight Spice Jar Set",
+  "match": "exact"
+ },
+ {
+  "sku": "CC-HOM-024",
+  "file": "/products/CC-HOM-024.webp",
+  "board": "home",
+  "boardIndex": 24,
+  "boardLabel": "Shower Caddy",
+  "match": "exact"
+ },
+ {
+  "sku": "CC-HOM-025",
+  "file": "/products/CC-HOM-025.webp",
+  "board": "home",
+  "boardIndex": 25,
+  "boardLabel": "Water Filter Pitcher",
+  "match": "exact"
+ },
+ {
+  "sku": "CC-ELE-013",
+  "file": "/products/CC-ELE-013.webp",
+  "board": "office",
+  "boardIndex": 1,
+  "boardLabel": "Adjustable Laptop Stand",
+  "match": "exact"
+ },
+ {
+  "sku": "CC-ELE-027",
+  "file": "/products/CC-ELE-027.webp",
+  "board": "office",
+  "boardIndex": 3,
+  "boardLabel": "Wireless Presentation Clicker",
+  "match": "similar"
+ },
+ {
+  "sku": "CC-ELE-014",
+  "file": "/products/CC-ELE-014.webp",
+  "board": "office",
+  "boardIndex": 4,
+  "boardLabel": "Wireless Keyboard and Mouse",
+  "match": "similar"
+ },
+ {
+  "sku": "CC-OFF-012",
+  "file": "/products/CC-OFF-012.webp",
+  "board": "office",
+  "boardIndex": 6,
+  "boardLabel": "Portable Document Scanner",
+  "match": "exact"
+ },
+ {
+  "sku": "CC-OFF-007",
+  "file": "/products/CC-OFF-007.webp",
+  "board": "office",
+  "boardIndex": 7,
+  "boardLabel": "Whiteboard with Markers",
+  "match": "similar"
+ },
+ {
+  "sku": "CC-OFF-009",
+  "file": "/products/CC-OFF-009.webp",
+  "board": "office",
+  "boardIndex": 8,
+  "boardLabel": "Scientific Calculator",
+  "match": "exact"
+ },
+ {
+  "sku": "CC-ELE-026",
+  "file": "/products/CC-ELE-026.webp",
+  "board": "office",
+  "boardIndex": 9,
+  "boardLabel": "USB Flash Drive",
+  "match": "similar"
+ },
+ {
+  "sku": "CC-OFF-005",
+  "file": "/products/CC-OFF-005.webp",
+  "board": "office",
+  "boardIndex": 10,
+  "boardLabel": "Laminator Machine",
+  "match": "similar"
+ },
+ {
+  "sku": "CC-OFF-011",
+  "file": "/products/CC-OFF-011.webp",
+  "board": "office",
+  "boardIndex": 11,
+  "boardLabel": "Desk Organiser",
+  "match": "similar"
+ },
+ {
+  "sku": "CC-FAS-001",
+  "file": "/products/CC-FAS-001.webp",
+  "board": "fashion",
+  "boardIndex": 1,
+  "boardLabel": "Classic Everyday Backpack",
+  "match": "exact"
+ },
+ {
+  "sku": "CC-FAS-002",
+  "file": "/products/CC-FAS-002.webp",
+  "board": "fashion",
+  "boardIndex": 2,
+  "boardLabel": "Laptop Backpack (15.6-inch)",
+  "match": "exact"
+ },
+ {
+  "sku": "CC-FAS-003",
+  "file": "/products/CC-FAS-003.webp",
+  "board": "fashion",
+  "boardIndex": 3,
+  "boardLabel": "Crossbody Bag",
+  "match": "exact"
+ },
+ {
+  "sku": "CC-FAS-004",
+  "file": "/products/CC-FAS-004.webp",
+  "board": "fashion",
+  "boardIndex": 4,
+  "boardLabel": "Women's Structured Handbag",
+  "match": "exact"
+ },
+ {
+  "sku": "CC-FAS-005",
+  "file": "/products/CC-FAS-005.webp",
+  "board": "fashion",
+  "boardIndex": 5,
+  "boardLabel": "Men's Casual Belt",
+  "match": "exact"
+ },
+ {
+  "sku": "CC-FAS-006",
+  "file": "/products/CC-FAS-006.webp",
+  "board": "fashion",
+  "boardIndex": 6,
+  "boardLabel": "Unisex Baseball Cap",
+  "match": "exact"
+ },
+ {
+  "sku": "CC-FAS-007",
+  "file": "/products/CC-FAS-007.webp",
+  "board": "fashion",
+  "boardIndex": 7,
+  "boardLabel": "Polarised Sunglasses",
+  "match": "exact"
+ },
+ {
+  "sku": "CC-FAS-008",
+  "file": "/products/CC-FAS-008.webp",
+  "board": "fashion",
+  "boardIndex": 8,
+  "boardLabel": "Minimalist Wristwatch",
+  "match": "exact"
+ },
+ {
+  "sku": "CC-FAS-009",
+  "file": "/products/CC-FAS-009.webp",
+  "board": "fashion",
+  "boardIndex": 9,
+  "boardLabel": "Wallet and Card Holder Set",
+  "match": "exact"
+ },
+ {
+  "sku": "CC-FAS-010",
+  "file": "/products/CC-FAS-010.webp",
+  "board": "fashion",
+  "boardIndex": 10,
+  "boardLabel": "Travel Toiletry Bag",
+  "match": "exact"
+ },
+ {
+  "sku": "CC-FAS-011",
+  "file": "/products/CC-FAS-011.webp",
+  "board": "fashion",
+  "boardIndex": 11,
+  "boardLabel": "Packing Cubes Set",
+  "match": "exact"
+ },
+ {
+  "sku": "CC-FAS-012",
+  "file": "/products/CC-FAS-012.webp",
+  "board": "fashion",
+  "boardIndex": 12,
+  "boardLabel": "Lightweight Travel Duffel Bag",
+  "match": "exact"
+ },
+ {
+  "sku": "CC-FAS-013",
+  "file": "/products/CC-FAS-013.webp",
+  "board": "fashion",
+  "boardIndex": 13,
+  "boardLabel": "Unisex Slides",
+  "match": "exact"
+ },
+ {
+  "sku": "CC-FAS-014",
+  "file": "/products/CC-FAS-014.webp",
+  "board": "fashion",
+  "boardIndex": 14,
+  "boardLabel": "Everyday Sneakers",
+  "match": "exact"
+ },
+ {
+  "sku": "CC-FAS-015",
+  "file": "/products/CC-FAS-015.webp",
+  "board": "fashion",
+  "boardIndex": 15,
+  "boardLabel": "Cotton Crew T-Shirt",
+  "match": "exact"
+ },
+ {
+  "sku": "CC-FAS-016",
+  "file": "/products/CC-FAS-016.webp",
+  "board": "fashion",
+  "boardIndex": 16,
+  "boardLabel": "Unisex Hoodie",
+  "match": "exact"
+ },
+ {
+  "sku": "CC-FAS-017",
+  "file": "/products/CC-FAS-017.webp",
+  "board": "fashion",
+  "boardIndex": 17,
+  "boardLabel": "Lightweight Scarf",
+  "match": "exact"
+ },
+ {
+  "sku": "CC-FAS-018",
+  "file": "/products/CC-FAS-018.webp",
+  "board": "fashion",
+  "boardIndex": 18,
+  "boardLabel": "Stainless Steel Jewellery Set",
+  "match": "exact"
+ },
+ {
+  "sku": "CC-FAS-019",
+  "file": "/products/CC-FAS-019.webp",
+  "board": "fashion",
+  "boardIndex": 19,
+  "boardLabel": "Adjustable Fashion Bracelet",
+  "match": "exact"
+ },
+ {
+  "sku": "CC-FAS-020",
+  "file": "/products/CC-FAS-020.webp",
+  "board": "fashion",
+  "boardIndex": 20,
+  "boardLabel": "Travel Neck Pillow",
+  "match": "exact"
+ },
+ {
+  "sku": "CC-BEA-001",
+  "file": "/products/CC-BEA-001.webp",
+  "board": "fashion",
+  "boardIndex": 21,
+  "boardLabel": "Facial Cleansing Brush",
+  "match": "exact"
+ },
+ {
+  "sku": "CC-BEA-002",
+  "file": "/products/CC-BEA-002.webp",
+  "board": "fashion",
+  "boardIndex": 22,
+  "boardLabel": "Makeup Brush Set",
+  "match": "exact"
+ },
+ {
+  "sku": "CC-BEA-003",
+  "file": "/products/CC-BEA-003.webp",
+  "board": "fashion",
+  "boardIndex": 23,
+  "boardLabel": "Cosmetic Organiser",
+  "match": "exact"
+ },
+ {
+  "sku": "CC-BEA-004",
+  "file": "/products/CC-BEA-004.webp",
+  "board": "fashion",
+  "boardIndex": 24,
+  "boardLabel": "Rechargeable Facial Trimmer",
+  "match": "exact"
+ },
+ {
+  "sku": "CC-BEA-005",
+  "file": "/products/CC-BEA-005.webp",
+  "board": "fashion",
+  "boardIndex": 25,
+  "boardLabel": "Electric Hair Clipper",
+  "match": "exact"
+ },
+ {
+  "sku": "CC-BEA-006",
+  "file": "/products/CC-BEA-006.webp",
+  "board": "fashion",
+  "boardIndex": 26,
+  "boardLabel": "Hair Dryer",
+  "match": "exact"
+ },
+ {
+  "sku": "CC-BEA-007",
+  "file": "/products/CC-BEA-007.webp",
+  "board": "fashion",
+  "boardIndex": 27,
+  "boardLabel": "Heat Styling Hair Straightener",
+  "match": "exact"
+ },
+ {
+  "sku": "CC-BEA-008",
+  "file": "/products/CC-BEA-008.webp",
+  "board": "fashion",
+  "boardIndex": 28,
+  "boardLabel": "Curling Wand",
+  "match": "exact"
+ },
+ {
+  "sku": "CC-BEA-009",
+  "file": "/products/CC-BEA-009.webp",
+  "board": "fashion",
+  "boardIndex": 29,
+  "boardLabel": "Satin Bonnet and Scrunchie Set",
+  "match": "exact"
+ },
+ {
+  "sku": "CC-BEA-010",
+  "file": "/products/CC-BEA-010.webp",
+  "board": "fashion",
+  "boardIndex": 30,
+  "boardLabel": "Microfibre Hair Towel Wrap",
+  "match": "exact"
+ },
+ {
+  "sku": "CC-BEA-011",
+  "file": "/products/CC-BEA-011.webp",
+  "board": "fashion",
+  "boardIndex": 31,
+  "boardLabel": "Refillable Perfume Atomiser",
+  "match": "exact"
+ },
+ {
+  "sku": "CC-BEA-012",
+  "file": "/products/CC-BEA-012.webp",
+  "board": "fashion",
+  "boardIndex": 32,
+  "boardLabel": "Electric Nail Care Kit",
+  "match": "exact"
+ },
+ {
+  "sku": "CC-BEA-013",
+  "file": "/products/CC-BEA-013.webp",
+  "board": "fashion",
+  "boardIndex": 33,
+  "boardLabel": "Manicure and Pedicure Set",
+  "match": "exact"
+ },
+ {
+  "sku": "CC-BEA-014",
+  "file": "/products/CC-BEA-014.webp",
+  "board": "fashion",
+  "boardIndex": 34,
+  "boardLabel": "Makeup Mirror with LED Lights",
+  "match": "exact"
+ },
+ {
+  "sku": "CC-BEA-015",
+  "file": "/products/CC-BEA-015.webp",
+  "board": "fashion",
+  "boardIndex": 35,
+  "boardLabel": "Silicone Body Scrubber",
+  "match": "exact"
+ },
+ {
+  "sku": "CC-BEA-016",
+  "file": "/products/CC-BEA-016.webp",
+  "board": "fashion",
+  "boardIndex": 36,
+  "boardLabel": "Shower Cap Multipack",
+  "match": "exact"
+ },
+ {
+  "sku": "CC-BEA-017",
+  "file": "/products/CC-BEA-017.webp",
+  "board": "fashion",
+  "boardIndex": 37,
+  "boardLabel": "Skincare Travel Bottle Set",
+  "match": "exact"
+ },
+ {
+  "sku": "CC-BEA-018",
+  "file": "/products/CC-BEA-018.webp",
+  "board": "fashion",
+  "boardIndex": 38,
+  "boardLabel": "Hot Water Foot Spa Basin",
+  "match": "exact"
+ }
+]

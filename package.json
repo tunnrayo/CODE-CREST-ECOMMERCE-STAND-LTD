@@ -7,9 +7,9 @@
     "node": ">=20"
   },
   "scripts": {
-    "dev": "next dev -p 3000",
+    "dev": "next dev -p 3002",
     "build": "next build",
-    "start": "next start -p ${PORT:-3000}",
+    "start": "next start -p ${PORT:-3002}",
     "lint": "next lint",
     "typecheck": "tsc --noEmit",
     "test": "vitest run",
@@ -19,7 +19,8 @@
     "db:migrate": "tsx scripts/migrate.ts",
     "db:seed": "tsx scripts/seed.ts",
     "admin:create": "tsx scripts/create-admin.ts",
-    "images:generate": "tsx scripts/generate-product-images.ts",
+    "images:apply": "tsx scripts/apply-images.ts",
+    "images:verify": "tsx scripts/verify-images.ts",
     "catalogue:verify": "tsx scripts/verify-catalogue.ts",
     "setup": "npm run db:migrate && npm run db:seed && npm run admin:create"
   },

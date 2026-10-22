@@ -8,4 +8,4 @@ Nothing is deployed by this repo. To go live:
 4. Persist `UPLOAD_DIR` (default `./storage/uploads`) on a volume or move uploads to object storage.
 5. Payments: add Paystack keys, register the webhook `https://<domain>/api/v1/payments/webhooks/paystack`, run a Paystack **test-mode** order end to end, then switch order mode to LIVE in Admin → Store settings.
 6. Email: verify a sending domain in Resend, set `RESEND_API_KEY` and `EMAIL_FROM`.
-7. Before launch: confirm delivery fees, review policy pages with a lawyer, replace illustration images with cleared photos, verify supplier costs, change the admin password, and use a multi-instance-safe rate limiter if scaling out.
+7. Before launch: confirm delivery fees, review policy pages with a lawyer, replace the owner-supplied board images with cleared product photos and add images for the 37 products that have none, verify supplier costs, change the admin password, and use a multi-instance-safe rate limiter if scaling out.

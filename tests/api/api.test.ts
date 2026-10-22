@@ -1,11 +1,11 @@
 /**
- * HTTP-level tests against a running server (default http://localhost:3000).
+ * HTTP-level tests against a running server (default http://localhost:3002).
  * Run `npm run dev` (or `npm start`) against a seeded database first.
  * Skipped automatically if the server is not reachable.
  */
 import { beforeAll, describe, expect, it } from "vitest";
 
-const BASE = process.env.TEST_BASE_URL ?? "http://localhost:3000";
+const BASE = process.env.TEST_BASE_URL ?? "http://localhost:3002";
 let up = false;
 beforeAll(async () => {
   try {

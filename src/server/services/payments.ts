@@ -57,7 +57,7 @@ export async function initializePayment(orderId: string, payerEmail: string) {
     status: "INITIATED",
     mode: keyMode(),
   });
-  const appUrl = process.env.APP_URL ?? "http://localhost:3000";
+  const appUrl = process.env.APP_URL ?? "http://localhost:3002";
   const data = await paystack<{ authorization_url: string; access_code: string; reference: string }>("/transaction/initialize", {
     method: "POST",
     body: JSON.stringify({

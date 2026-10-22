@@ -44,7 +44,7 @@ export default async function Dashboard({ searchParams }: { searchParams: SP }) 
         <Stat label="Supplier-verified" value={`${v.SUPPLIER_VERIFIED ?? 0} / ${total}`} hint={`${v.UNVERIFIED ?? 0} awaiting supplier verification`} href="/admin/products?verification=UNVERIFIED" />
         <Stat label="Orders" value={stats.totalOrders} hint={`${stats.byStatus.PENDING ?? 0} pending review`} href="/admin/orders" />
         <Stat label="Verified paid revenue" value={formatKobo(stats.paidRevenueKobo)} hint={`${stats.paidOrders} paid order(s) · last 30 days ${formatKobo(stats.paidRevenue30dKobo)}`} href="/admin/payments" />
-        <Stat label="Images verified" value={`${images.summary.verified} / ${images.summary.total}`} hint={`${images.summary.illustration} illustrations awaiting photos`} href="/admin/images" />
+        <Stat label="Images verified" value={`${images.summary.verified} / ${images.summary.total}`} hint={`${images.summary.uploaded} owner-supplied · ${images.summary.missing} with no image yet`} href="/admin/images" />
         <Stat label="Stock tracked" value={inv.trackedCount} hint={`${inv.untrackedCount} with unknown stock`} href="/admin/inventory" />
         <Stat label="Low / out of stock" value={`${inv.lowStock.length} / ${inv.outOfStock.length}`} href="/admin/inventory" />
         <Stat label="New messages" value={Number(newMsgs.n)} href="/admin/messages" />

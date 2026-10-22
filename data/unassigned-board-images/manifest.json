@@ -1,0 +1,261 @@
+[
+ {
+  "file": "kids-01.webp",
+  "board": "kids",
+  "boardIndex": 1,
+  "boardLabel": "Baby Stroller",
+  "reason": "no catalogue product with this name"
+ },
+ {
+  "file": "kids-02.webp",
+  "board": "kids",
+  "boardIndex": 2,
+  "boardLabel": "Baby Walker",
+  "reason": "no catalogue product with this name"
+ },
+ {
+  "file": "kids-03.webp",
+  "board": "kids",
+  "boardIndex": 3,
+  "boardLabel": "Baby Car Seat",
+  "reason": "no catalogue product with this name"
+ },
+ {
+  "file": "kids-04.webp",
+  "board": "kids",
+  "boardIndex": 4,
+  "boardLabel": "Toys Set",
+  "reason": "no catalogue product with this name"
+ },
+ {
+  "file": "kids-05.webp",
+  "board": "kids",
+  "boardIndex": 5,
+  "boardLabel": "Kids Tracksuit",
+  "reason": "no catalogue product with this name"
+ },
+ {
+  "file": "kids-07.webp",
+  "board": "kids",
+  "boardIndex": 7,
+  "boardLabel": "Kids Sneakers",
+  "reason": "no catalogue product with this name"
+ },
+ {
+  "file": "kids-08.webp",
+  "board": "kids",
+  "boardIndex": 8,
+  "boardLabel": "Girls Dress",
+  "reason": "no catalogue product with this name"
+ },
+ {
+  "file": "kids-09.webp",
+  "board": "kids",
+  "boardIndex": 9,
+  "boardLabel": "Boys Outfit",
+  "reason": "no catalogue product with this name"
+ },
+ {
+  "file": "kids-10.webp",
+  "board": "kids",
+  "boardIndex": 10,
+  "boardLabel": "Baby Feeding Set",
+  "reason": "no catalogue product with this name"
+ },
+ {
+  "file": "kids-11.webp",
+  "board": "kids",
+  "boardIndex": 11,
+  "boardLabel": "Play Tent & Ball Pit",
+  "reason": "no catalogue product with this name"
+ },
+ {
+  "file": "kids-12.webp",
+  "board": "kids",
+  "boardIndex": 12,
+  "boardLabel": "Inline Skates",
+  "reason": "no catalogue product with this name"
+ },
+ {
+  "file": "kids-13.webp",
+  "board": "kids",
+  "boardIndex": 13,
+  "boardLabel": "Football",
+  "reason": "no catalogue product with this name"
+ },
+ {
+  "file": "kids-15.webp",
+  "board": "kids",
+  "boardIndex": 15,
+  "boardLabel": "Dumbbell Set",
+  "reason": "no catalogue product with this name"
+ },
+ {
+  "file": "kids-16.webp",
+  "board": "kids",
+  "boardIndex": 16,
+  "boardLabel": "Bicycle",
+  "reason": "no catalogue product with this name"
+ },
+ {
+  "file": "kids-17.webp",
+  "board": "kids",
+  "boardIndex": 17,
+  "boardLabel": "Camping Tent",
+  "reason": "no catalogue product with this name"
+ },
+ {
+  "file": "kids-18.webp",
+  "board": "kids",
+  "boardIndex": 18,
+  "boardLabel": "Sleeping Bag",
+  "reason": "no catalogue product with this name"
+ },
+ {
+  "file": "kids-19.webp",
+  "board": "kids",
+  "boardIndex": 19,
+  "boardLabel": "Sports Water Bottle",
+  "reason": "no catalogue product with this name"
+ },
+ {
+  "file": "kids-20.webp",
+  "board": "kids",
+  "boardIndex": 20,
+  "boardLabel": "Outdoor Backpack",
+  "reason": "no catalogue product with this name"
+ },
+ {
+  "file": "elec-14.webp",
+  "board": "elec",
+  "boardIndex": 14,
+  "boardLabel": "Monitor Stand",
+  "reason": "no catalogue product with this name"
+ },
+ {
+  "file": "elec-16.webp",
+  "board": "elec",
+  "boardIndex": 16,
+  "boardLabel": "Portable Document Scanner",
+  "reason": "no catalogue product with this name"
+ },
+ {
+  "file": "elec-17.webp",
+  "board": "elec",
+  "boardIndex": 17,
+  "boardLabel": "Whiteboard with Markers",
+  "reason": "no catalogue product with this name"
+ },
+ {
+  "file": "elec-18.webp",
+  "board": "elec",
+  "boardIndex": 18,
+  "boardLabel": "Wireless Presentation Clicker",
+  "reason": "no catalogue product with this name"
+ },
+ {
+  "file": "elec-19.webp",
+  "board": "elec",
+  "boardIndex": 19,
+  "boardLabel": "Action Camera",
+  "reason": "no catalogue product with this name"
+ },
+ {
+  "file": "elec-20.webp",
+  "board": "elec",
+  "boardIndex": 20,
+  "boardLabel": "Bluetooth Earphones (Neckband)",
+  "reason": "no catalogue product with this name"
+ },
+ {
+  "file": "elec-21.webp",
+  "board": "elec",
+  "boardIndex": 21,
+  "boardLabel": "Projector",
+  "reason": "no catalogue product with this name"
+ },
+ {
+  "file": "elec-22.webp",
+  "board": "elec",
+  "boardIndex": 22,
+  "boardLabel": "Smart TV Box",
+  "reason": "no catalogue product with this name"
+ },
+ {
+  "file": "elec-23.webp",
+  "board": "elec",
+  "boardIndex": 23,
+  "boardLabel": "Smart Watch (Kids)",
+  "reason": "no catalogue product with this name"
+ },
+ {
+  "file": "elec-24.webp",
+  "board": "elec",
+  "boardIndex": 24,
+  "boardLabel": "Calculator",
+  "reason": "no catalogue product with this name"
+ },
+ {
+  "file": "elec-25.webp",
+  "board": "elec",
+  "boardIndex": 25,
+  "boardLabel": "Printer",
+  "reason": "no catalogue product with this name"
+ },
+ {
+  "file": "elec-26.webp",
+  "board": "elec",
+  "boardIndex": 26,
+  "boardLabel": "3D Printer",
+  "reason": "no catalogue product with this name"
+ },
+ {
+  "file": "elec-27.webp",
+  "board": "elec",
+  "boardIndex": 27,
+  "boardLabel": "Drone",
+  "reason": "no catalogue product with this name"
+ },
+ {
+  "file": "elec-28.webp",
+  "board": "elec",
+  "boardIndex": 28,
+  "boardLabel": "Wireless Router",
+  "reason": "no catalogue product with this name"
+ },
+ {
+  "file": "elec-29.webp",
+  "board": "elec",
+  "boardIndex": 29,
+  "boardLabel": "Smart Home Camera",
+  "reason": "no catalogue product with this name"
+ },
+ {
+  "file": "elec-30.webp",
+  "board": "elec",
+  "boardIndex": 30,
+  "boardLabel": "Gaming Console Controller",
+  "reason": "no catalogue product with this name"
+ },
+ {
+  "file": "office-02.webp",
+  "board": "office",
+  "boardIndex": 2,
+  "boardLabel": "Ergonomic Office Chair",
+  "reason": "no catalogue product with this name"
+ },
+ {
+  "file": "office-05.webp",
+  "board": "office",
+  "boardIndex": 5,
+  "boardLabel": "Wireless Printer",
+  "reason": "no catalogue product with this name"
+ },
+ {
+  "file": "office-12.webp",
+  "board": "office",
+  "boardIndex": 12,
+  "boardLabel": "A4 Paper (500 Sheets)",
+  "reason": "no catalogue product with this name"
+ }
+]

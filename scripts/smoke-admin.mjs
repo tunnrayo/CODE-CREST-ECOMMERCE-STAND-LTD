@@ -1,6 +1,6 @@
 // Dev smoke test: logs in as admin (password from env ADMIN_PASSWORD) and loads every admin page.
 import { chromium } from "playwright";
-const base = process.env.BASE ?? "http://localhost:3000";
+const base = process.env.BASE ?? "http://localhost:3002";
 const out = process.env.SHOTS;
 const browser = await chromium.launch({ executablePath: process.env.CHROMIUM_PATH || undefined });
 const page = await (await browser.newContext({ viewport: { width: 1360, height: 900 } })).newPage();

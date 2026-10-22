@@ -1,6 +1,6 @@
 // Dev smoke test of storefront journeys + a real admin mutation. Usage: BASE=... ADMIN_* env, SHOTS=dir
 import { chromium } from "playwright";
-const base = process.env.BASE ?? "http://localhost:3000";
+const base = process.env.BASE ?? "http://localhost:3002";
 const out = process.env.SHOTS;
 const browser = await chromium.launch({ executablePath: process.env.CHROMIUM_PATH || undefined });
 const results = [];

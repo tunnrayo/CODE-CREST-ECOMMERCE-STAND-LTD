@@ -422,6 +422,9 @@ export async function getImageReport() {
     verified: rows.filter((r) => r.image?.verificationStatus === "VERIFIED").length,
     pendingPermission: rows.filter((r) => r.image && r.image.verificationStatus === "PENDING").length,
     illustration: rows.filter((r) => r.image?.sourceType === "ORIGINAL_ILLUSTRATION").length,
+    uploaded: rows.filter((r) => r.image?.sourceType === "ADMIN_UPLOAD").length,
+    sourced: rows.filter((r) => r.image && ["SUPPLIER", "MANUFACTURER", "STOCK_LICENSED"].includes(r.image.sourceType)).length,
+    missing: rows.filter((r) => !r.image).length,
     needsImage: rows.filter((r) => !r.image || r.image.verificationStatus === "NEEDS_REPLACEMENT").length,
   };
   return { rows, summary };

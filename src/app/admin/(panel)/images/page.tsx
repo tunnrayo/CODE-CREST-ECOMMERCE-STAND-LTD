@@ -17,8 +17,8 @@ export default async function ImagesReport({ searchParams }: { searchParams: SP 
       <div className="grid grid-cols-2 gap-4 lg:grid-cols-4">
         <Stat label="Products" value={summary.total} />
         <Stat label="Verified images" value={summary.verified} />
-        <Stat label="Code Crest illustrations" value={summary.illustration} hint="Placeholders until real photos are cleared" />
-        <Stat label="Need a photo" value={summary.needsImage} />
+        <Stat label="Owner-supplied images" value={summary.uploaded} hint={`${summary.sourced} supplier/stock · ${summary.illustration} illustrations · ${summary.missing} missing`} />
+        <Stat label="No image (placeholder shown)" value={summary.missing} />
       </div>
       <div className="flex gap-2 text-sm">
         <Link href="/admin/images" className={filter === "all" ? "font-bold text-burgundy" : "text-grey-600"}>All</Link>·

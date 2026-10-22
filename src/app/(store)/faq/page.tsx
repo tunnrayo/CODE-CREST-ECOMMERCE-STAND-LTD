@@ -12,7 +12,7 @@ const FAQ: { q: string; a: React.ReactNode; text: string }[] = [
   { q: "How can I track my order?", text: "Use the Track Order page with your order reference and the email you used at checkout. Signed-in customers can also see orders in their account.", a: <>Use the <Link href="/track-order" className="text-burgundy underline">Track Order</Link> page with your order reference and the email you used at checkout. Signed-in customers can also see orders in their account.</> },
   { q: "Can I return an item?", text: "Yes, subject to our Returns & Refund Policy.", a: <>Yes, subject to our <Link href="/returns-policy" className="text-burgundy underline">Returns & Refund Policy</Link>.</> },
   { q: "Do I need an account to order?", text: "No. You can check out as a guest. An account lets you save addresses, keep a wishlist and see your order history.", a: "No. You can check out as a guest. An account lets you save addresses, keep a wishlist and see your order history." },
-  { q: "Why do some products show an illustration instead of a photo?", text: "We are collecting verified product photos from suppliers. Until then some listings show a Code Crest illustration of the product type.", a: "We are collecting verified product photos from suppliers. Until then some listings show a Code Crest illustration of the product type." },
+  { q: "Why do some products show “Image coming soon”?", text: "We are still adding product images. Until a listing has its own image it shows a neutral placeholder.", a: "We are still adding product images. Until a listing has its own image it shows a neutral placeholder." },
 ];
 
 export default function FaqPage() {

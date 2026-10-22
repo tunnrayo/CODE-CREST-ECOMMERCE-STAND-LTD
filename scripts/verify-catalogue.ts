@@ -22,11 +22,10 @@ for (const s of src) {
   if (p.basePlanningPriceKobo !== s.basePlanningPriceKobo) problems.push(`${s.sku} base price differs`);
   if (applyPricingRule(s.basePlanningPriceKobo) !== s.suggestedRetailPriceKobo) problems.push(`${s.sku} rule mismatch in source`);
   if (s.suggestedRetailPriceKobo !== s.basePlanningPriceKobo) adjusted++;
-  if (!imgs.some((i) => i.productId === p.id)) problems.push(`${s.sku} has no image`);
 }
 console.log(`source products: ${src.length}; db products: ${rows.length}; price-adjusted (+₦10,000): ${adjusted}`);
 console.log(`products with an image record: ${new Set(imgs.map((i) => i.productId)).size}`);
 if (problems.length) { console.error("PROBLEMS:\n" + problems.join("\n")); process.exit(1); }
-console.log("✓ catalogue verified: names, base prices, pricing rule, images");
+console.log("✓ catalogue verified: names, base prices, pricing rule");
 }
 main().then(() => process.exit(0)).catch((e) => { console.error(e); process.exit(1); });
