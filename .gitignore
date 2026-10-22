@@ -1,0 +1,16 @@
+node_modules/
+.next/
+out/
+coverage/
+test-results/
+playwright-report/
+*.tsbuildinfo
+next-env.d.ts
+# secrets & local data — never commit
+.env
+.env.*
+!.env.example
+storage/
+pgdata/
+*.log
+.DS_Store

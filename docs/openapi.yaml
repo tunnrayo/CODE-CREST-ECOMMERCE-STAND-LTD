@@ -1,0 +1,48 @@
+openapi: 3.0.3
+info:
+  title: Code Crest Store API
+  version: 1.0.0
+  description: |
+    REST API for the Code Crest storefront and admin. Success: `{ "data": ..., "meta"?: ... }`.
+    Error: `{ "error": { "code", "message", "details" } }`. Money is integer kobo (NGN).
+    Cookie-authenticated unsafe requests must be same-origin. Admin endpoints require a STAFF/ADMIN session.
+servers: [{ url: http://localhost:3000 }]
+components:
+  securitySchemes:
+    session: { type: apiKey, in: cookie, name: cc_session }
+paths:
+  /api/health: { get: { summary: Health check (database connectivity), responses: { "200": { description: ok } } } }
+  /api/v1/products: { get: { summary: List/search published products, parameters: [ {name: q, in: query, schema: {type: string}}, {name: category, in: query, schema: {type: string}}, {name: minPrice, in: query, schema: {type: number}, description: naira}, {name: maxPrice, in: query, schema: {type: number}}, {name: sort, in: query, schema: {type: string}}, {name: page, in: query, schema: {type: integer}}, {name: perPage, in: query, schema: {type: integer, maximum: 60}} ], responses: { "200": { description: products + pagination meta } } } }
+  /api/v1/products/{slug}: { get: { summary: Product detail, parameters: [{name: slug, in: path, required: true, schema: {type: string}}], responses: { "200": {description: ok}, "404": {description: not found} } } }
+  /api/v1/categories: { get: { summary: Categories with counts, responses: { "200": {description: ok} } } }
+  /api/v1/search: { get: { summary: Search suggestions/results, responses: { "200": {description: ok} } } }
+  /api/v1/cart: { get: { summary: Current cart with server-calculated totals, responses: { "200": {description: ok} } } }
+  /api/v1/cart/items: { post: { summary: Add item (client prices ignored), requestBody: { content: { application/json: { schema: { type: object, required: [productId], properties: { productId: {type: string, format: uuid}, variantId: {type: string, format: uuid, nullable: true}, quantity: {type: integer, minimum: 1} } } } } }, responses: { "201": {description: added}, "422": {description: validation} } } }
+  /api/v1/cart/items/{itemId}: { patch: { summary: Change quantity (0 removes), responses: { "200": {description: ok} } }, delete: { summary: Remove item, responses: { "200": {description: ok} } } }
+  /api/v1/shipping/options: { get: { summary: Delivery options for a state, parameters: [{name: state, in: query, schema: {type: string}}], responses: { "200": {description: ok} } } }
+  /api/v1/checkout: { post: { summary: Place order from cart (totals recalculated server-side), responses: { "201": {description: order reference + access token}, "422": {description: validation}, "409": {description: stock conflict} } } }
+  /api/v1/orders/{reference}: { get: { summary: View an order (owner session or access token), responses: { "200": {description: ok}, "404": {description: not found} } } }
+  /api/v1/orders/{reference}/pay: { post: { summary: Initialise Paystack payment (requires configured keys and confirmed delivery fee), responses: { "200": {description: authorization url}, "503": {description: payments not configured} } } }
+  /api/v1/orders/track: { post: { summary: Track by reference + email, responses: { "200": {description: limited order view}, "404": {description: not found} } } }
+  /api/v1/payments/verify: { post: { summary: Verify a Paystack reference server-side, responses: { "200": {description: ok} } } }
+  /api/v1/payments/webhooks/paystack: { post: { summary: Paystack webhook (HMAC-SHA512 signature required, deduplicated), responses: { "200": {description: ok}, "401": {description: bad signature} } } }
+  /api/v1/auth/register: { post: { summary: Create customer account, responses: { "201": {description: created} } } }
+  /api/v1/auth/login: { post: { summary: Log in (rate limited, lockout), responses: { "200": {description: ok}, "401": {description: invalid} } } }
+  /api/v1/auth/logout: { post: { summary: Log out, responses: { "200": {description: ok} } } }
+  /api/v1/auth/me: { get: { security: [{session: []}], summary: Current user, responses: { "200": {description: ok}, "401": {description: not signed in} } } }
+  /api/v1/auth/forgot-password: { post: { summary: Request reset email (always generic response), responses: { "200": {description: ok} } } }
+  /api/v1/auth/reset-password: { post: { summary: Reset with token, responses: { "200": {description: ok} } } }
+  /api/v1/account/orders: { get: { security: [{session: []}], summary: Customer order history, responses: { "200": {description: ok} } } }
+  /api/v1/account/addresses: { get: { security: [{session: []}], summary: Saved addresses, responses: { "200": {description: ok} } }, post: { security: [{session: []}], summary: Add address, responses: { "201": {description: ok} } } }
+  /api/v1/wishlist: { get: { security: [{session: []}], summary: Wishlist, responses: { "200": {description: ok} } }, post: { security: [{session: []}], summary: Toggle item, responses: { "200": {description: ok} } } }
+  /api/v1/newsletter: { post: { summary: Subscribe (explicit consent required), responses: { "200": {description: ok} } } }
+  /api/v1/contact: { post: { summary: Send a contact message, responses: { "201": {description: ok} } } }
+  /api/v1/admin/products: { get: { security: [{session: []}], summary: List all products (any status), responses: { "200": {description: ok}, "401": {description: anon}, "403": {description: customer} } }, post: { security: [{session: []}], summary: Create product, responses: { "201": {description: created} } } }
+  /api/v1/admin/products/{id}: { get: { security: [{session: []}], summary: Product (admin view), responses: { "200": {description: ok} } }, put: { security: [{session: []}], summary: Update product, responses: { "200": {description: ok} } } }
+  /api/v1/admin/products/export: { get: { security: [{session: []}], summary: CSV export, responses: { "200": {description: text/csv} } } }
+  /api/v1/admin/categories: { get: { security: [{session: []}], summary: List categories, responses: { "200": {description: ok} } }, post: { security: [{session: []}], summary: Create category, responses: { "201": {description: ok} } } }
+  /api/v1/admin/inventory: { get: { security: [{session: []}], summary: Inventory summary, responses: { "200": {description: ok} } } }
+  /api/v1/admin/orders: { get: { security: [{session: []}], summary: List orders, responses: { "200": {description: ok} } } }
+  /api/v1/admin/orders/{id}/status: { patch: { security: [{session: []}], summary: Change order status (state machine enforced), responses: { "200": {description: ok}, "409": {description: invalid transition} } } }
+  /api/v1/admin/suppliers: { get: { security: [{session: []}], summary: List suppliers, responses: { "200": {description: ok} } } }
+  /api/v1/admin/images/report: { get: { security: [{session: []}], summary: Image source/licence verification report, responses: { "200": {description: ok} } } }

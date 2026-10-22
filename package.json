@@ -1,0 +1,60 @@
+{
+  "name": "code-crest-ecommerce",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Code Crest Ecommerce Stand Ltd — e-commerce platform (Next.js, TypeScript, PostgreSQL)",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "dev": "next dev -p 3000",
+    "build": "next build",
+    "start": "next start -p ${PORT:-3000}",
+    "lint": "next lint",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "smoke": "node scripts/smoke-store.mjs && node scripts/smoke-admin.mjs",
+    "db:generate": "drizzle-kit generate",
+    "db:migrate": "tsx scripts/migrate.ts",
+    "db:seed": "tsx scripts/seed.ts",
+    "admin:create": "tsx scripts/create-admin.ts",
+    "images:generate": "tsx scripts/generate-product-images.ts",
+    "catalogue:verify": "tsx scripts/verify-catalogue.ts",
+    "setup": "npm run db:migrate && npm run db:seed && npm run admin:create"
+  },
+  "dependencies": {
+    "@fontsource/poppins": "^5.3.0",
+    "@node-rs/argon2": "^2.2.2",
+    "clsx": "^2.1.1",
+    "drizzle-orm": "^0.45.4",
+    "lucide-react": "^1.61.0",
+    "next": "^15.5.28",
+    "pg": "^8.23.1",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "server-only": "^0.0.1",
+    "sharp": "^0.35.5",
+    "zod": "^3.25.76"
+  },
+  "devDependencies": {
+    "@phosphor-icons/core": "^2.1.1",
+    "@playwright/test": "^1.64.1",
+    "@types/node": "^26.6.5",
+    "@types/pg": "^8.23.1",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "autoprefixer": "^10.6.1",
+    "dotenv": "^18.0.8",
+    "drizzle-kit": "^0.31.11",
+    "eslint": "^8.57.1",
+    "eslint-config-next": "^15.5.28",
+    "mammoth": "^1.13.0",
+    "node-html-parser": "^9.0.5",
+    "postcss": "^8.5.31",
+    "tailwindcss": "^3.4.19",
+    "tsx": "^4.23.15",
+    "typescript": "^6.0.3",
+    "vitest": "^3.2.7"
+  }
+}
