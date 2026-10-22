@@ -44,7 +44,7 @@ All **125 products** come from the supplied catalogue document (`data/source/…
 | Email (Resend) | Outbox implemented. Without `RESEND_API_KEY`/`EMAIL_FROM` messages are stored as `NOT_CONFIGURED`; none are sent. |
 | Suppliers | Adapter interface + manual adapter. No supplier API is connected; none is pre-loaded. See `docs/SUPPLIER_INTEGRATIONS.md`. |
 | Delivery | Zones/methods are admin-configured. The seeded Nigeria method has an **unconfirmed** fee shown as "to be confirmed". |
-| Product images | 88 of 125 products use images cropped from the catalogue boards you supplied (permission: permitted, verification: pending; not supplier photos). The other 37 show a neutral “Image coming soon” placeholder. No generated illustrations are used. Per-product detail: `docs/IMAGE_AUDIT.md`. Replace or add images in Admin → product → Images (`docs/IMAGE_VERIFICATION.md`). |
+| Product images | All 125 products use images cropped from the catalogue boards you supplied (permission: permitted, verification: pending; not supplier photos). No generated illustrations are used, and the neutral “Image coming soon” placeholder remains as the fallback for any product without an image. Per-product detail: `docs/IMAGE_AUDIT.md`. Replace or add images in Admin → product → Images (`docs/IMAGE_VERIFICATION.md`). |
 | Policies | Drafts with `[bracketed]` gaps. Need legal review before launch. |
 | Rate limiting | In-memory (single instance). Use a shared store (Redis) if you run multiple instances. |
 

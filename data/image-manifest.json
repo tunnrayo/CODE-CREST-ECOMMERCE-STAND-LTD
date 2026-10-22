@@ -702,5 +702,301 @@
   "boardIndex": 38,
   "boardLabel": "Hot Water Foot Spa Basin",
   "match": "exact"
+ },
+ {
+  "sku": "CC-ELE-015",
+  "file": "/products/CC-ELE-015.webp",
+  "board": "remaining-37",
+  "boardIndex": 1,
+  "boardLabel": "USB-C Multiport Adapter",
+  "match": "exact"
+ },
+ {
+  "sku": "CC-ELE-017",
+  "file": "/products/CC-ELE-017.webp",
+  "board": "remaining-37",
+  "boardIndex": 2,
+  "boardLabel": "Ring Light with Phone Holder",
+  "match": "exact"
+ },
+ {
+  "sku": "CC-ELE-018",
+  "file": "/products/CC-ELE-018.webp",
+  "board": "remaining-37",
+  "boardIndex": 3,
+  "boardLabel": "Tripod Phone Stand",
+  "match": "exact"
+ },
+ {
+  "sku": "CC-ELE-019",
+  "file": "/products/CC-ELE-019.webp",
+  "board": "remaining-37",
+  "boardIndex": 4,
+  "boardLabel": "Car Phone Mount",
+  "match": "exact"
+ },
+ {
+  "sku": "CC-ELE-020",
+  "file": "/products/CC-ELE-020.webp",
+  "board": "remaining-37",
+  "boardIndex": 5,
+  "boardLabel": "Digital Kitchen Scale",
+  "match": "exact"
+ },
+ {
+  "sku": "CC-ELE-021",
+  "file": "/products/CC-ELE-021.webp",
+  "board": "remaining-37",
+  "boardIndex": 6,
+  "boardLabel": "Rechargeable Desk Fan",
+  "match": "exact"
+ },
+ {
+  "sku": "CC-ELE-022",
+  "file": "/products/CC-ELE-022.webp",
+  "board": "remaining-37",
+  "boardIndex": 7,
+  "boardLabel": "Mini UPS for Router",
+  "match": "exact"
+ },
+ {
+  "sku": "CC-ELE-024",
+  "file": "/products/CC-ELE-024.webp",
+  "board": "remaining-37",
+  "boardIndex": 8,
+  "boardLabel": "HDMI Cable 2m",
+  "match": "exact"
+ },
+ {
+  "sku": "CC-ELE-025",
+  "file": "/products/CC-ELE-025.webp",
+  "board": "remaining-37",
+  "boardIndex": 9,
+  "boardLabel": "Portable SSD 500GB",
+  "match": "exact"
+ },
+ {
+  "sku": "CC-ELE-028",
+  "file": "/products/CC-ELE-028.webp",
+  "board": "remaining-37",
+  "boardIndex": 10,
+  "boardLabel": "Digital Alarm Clock",
+  "match": "exact"
+ },
+ {
+  "sku": "CC-ELE-029",
+  "file": "/products/CC-ELE-029.webp",
+  "board": "remaining-37",
+  "boardIndex": 11,
+  "boardLabel": "Smart Plug",
+  "match": "exact"
+ },
+ {
+  "sku": "CC-ELE-030",
+  "file": "/products/CC-ELE-030.webp",
+  "board": "remaining-37",
+  "boardIndex": 12,
+  "boardLabel": "LED Monitor Light Bar",
+  "match": "exact"
+ },
+ {
+  "sku": "CC-OFF-001",
+  "file": "/products/CC-OFF-001.webp",
+  "board": "remaining-37",
+  "boardIndex": 13,
+  "boardLabel": "A4 Document Organiser",
+  "match": "exact"
+ },
+ {
+  "sku": "CC-OFF-002",
+  "file": "/products/CC-OFF-002.webp",
+  "board": "remaining-37",
+  "boardIndex": 14,
+  "boardLabel": "Desktop File Holder",
+  "match": "exact"
+ },
+ {
+  "sku": "CC-OFF-003",
+  "file": "/products/CC-OFF-003.webp",
+  "board": "remaining-37",
+  "boardIndex": 15,
+  "boardLabel": "Ergonomic Office Chair Cushion",
+  "match": "exact"
+ },
+ {
+  "sku": "CC-OFF-004",
+  "file": "/products/CC-OFF-004.webp",
+  "board": "remaining-37",
+  "boardIndex": 16,
+  "boardLabel": "Adjustable Footrest",
+  "match": "exact"
+ },
+ {
+  "sku": "CC-OFF-006",
+  "file": "/products/CC-OFF-006.webp",
+  "board": "remaining-37",
+  "boardIndex": 17,
+  "boardLabel": "Paper Shredder",
+  "match": "exact"
+ },
+ {
+  "sku": "CC-OFF-008",
+  "file": "/products/CC-OFF-008.webp",
+  "board": "remaining-37",
+  "boardIndex": 18,
+  "boardLabel": "Whiteboard Marker Set",
+  "match": "exact"
+ },
+ {
+  "sku": "CC-OFF-010",
+  "file": "/products/CC-OFF-010.webp",
+  "board": "remaining-37",
+  "boardIndex": 19,
+  "boardLabel": "A4 Notebook Multipack",
+  "match": "exact"
+ },
+ {
+  "sku": "CC-BAB-001",
+  "file": "/products/CC-BAB-001.webp",
+  "board": "remaining-37",
+  "boardIndex": 20,
+  "boardLabel": "Insulated Kids Water Bottle",
+  "match": "exact"
+ },
+ {
+  "sku": "CC-BAB-003",
+  "file": "/products/CC-BAB-003.webp",
+  "board": "remaining-37",
+  "boardIndex": 21,
+  "boardLabel": "Building Blocks Set",
+  "match": "exact"
+ },
+ {
+  "sku": "CC-BAB-004",
+  "file": "/products/CC-BAB-004.webp",
+  "board": "remaining-37",
+  "boardIndex": 22,
+  "boardLabel": "Educational Flash Cards",
+  "match": "exact"
+ },
+ {
+  "sku": "CC-BAB-005",
+  "file": "/products/CC-BAB-005.webp",
+  "board": "remaining-37",
+  "boardIndex": 23,
+  "boardLabel": "Children's Art Supply Set",
+  "match": "exact"
+ },
+ {
+  "sku": "CC-BAB-006",
+  "file": "/products/CC-BAB-006.webp",
+  "board": "remaining-37",
+  "boardIndex": 24,
+  "boardLabel": "Kids' Drawing Tablet",
+  "match": "exact"
+ },
+ {
+  "sku": "CC-BAB-007",
+  "file": "/products/CC-BAB-007.webp",
+  "board": "remaining-37",
+  "boardIndex": 25,
+  "boardLabel": "Soft Plush Toy",
+  "match": "exact"
+ },
+ {
+  "sku": "CC-BAB-008",
+  "file": "/products/CC-BAB-008.webp",
+  "board": "remaining-37",
+  "boardIndex": 26,
+  "boardLabel": "Kids' Lunch Box Set",
+  "match": "exact"
+ },
+ {
+  "sku": "CC-BAB-009",
+  "file": "/products/CC-BAB-009.webp",
+  "board": "remaining-37",
+  "boardIndex": 27,
+  "boardLabel": "Baby Changing Bag",
+  "match": "exact"
+ },
+ {
+  "sku": "CC-BAB-010",
+  "file": "/products/CC-BAB-010.webp",
+  "board": "remaining-37",
+  "boardIndex": 28,
+  "boardLabel": "Baby Bath Thermometer",
+  "match": "exact"
+ },
+ {
+  "sku": "CC-SPO-002",
+  "file": "/products/CC-SPO-002.webp",
+  "board": "remaining-37",
+  "boardIndex": 29,
+  "boardLabel": "Resistance Bands Set",
+  "match": "exact"
+ },
+ {
+  "sku": "CC-SPO-003",
+  "file": "/products/CC-SPO-003.webp",
+  "board": "remaining-37",
+  "boardIndex": 30,
+  "boardLabel": "Adjustable Skipping Rope",
+  "match": "exact"
+ },
+ {
+  "sku": "CC-SPO-004",
+  "file": "/products/CC-SPO-004.webp",
+  "board": "remaining-37",
+  "boardIndex": 31,
+  "boardLabel": "Stainless Steel Sports Bottle",
+  "match": "exact"
+ },
+ {
+  "sku": "CC-SPO-005",
+  "file": "/products/CC-SPO-005.webp",
+  "board": "remaining-37",
+  "boardIndex": 32,
+  "boardLabel": "Insulated Picnic Cooler Bag",
+  "match": "exact"
+ },
+ {
+  "sku": "CC-SPO-006",
+  "file": "/products/CC-SPO-006.webp",
+  "board": "remaining-37",
+  "boardIndex": 33,
+  "boardLabel": "Camping LED Lantern",
+  "match": "exact"
+ },
+ {
+  "sku": "CC-SPO-007",
+  "file": "/products/CC-SPO-007.webp",
+  "board": "remaining-37",
+  "boardIndex": 34,
+  "boardLabel": "Compact Travel First Aid Kit",
+  "match": "exact"
+ },
+ {
+  "sku": "CC-SPO-008",
+  "file": "/products/CC-SPO-008.webp",
+  "board": "remaining-37",
+  "boardIndex": 35,
+  "boardLabel": "Foldable Outdoor Chair",
+  "match": "exact"
+ },
+ {
+  "sku": "CC-SPO-009",
+  "file": "/products/CC-SPO-009.webp",
+  "board": "remaining-37",
+  "boardIndex": 36,
+  "boardLabel": "Football Training Cones Set",
+  "match": "exact"
+ },
+ {
+  "sku": "CC-SPO-010",
+  "file": "/products/CC-SPO-010.webp",
+  "board": "remaining-37",
+  "boardIndex": 37,
+  "boardLabel": "Fitness Hand Grip Trainer",
+  "match": "exact"
  }
 ]

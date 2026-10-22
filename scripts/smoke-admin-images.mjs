@@ -1,4 +1,4 @@
-// Admin image management: upload to a product with no image, see it on the storefront, then delete it again.
+// Admin image management: upload a test image to a product, see it on the storefront, reject a fake file, then delete only the test image.
 import { chromium } from "playwright";
 import sharp from "sharp";
 import fs from "node:fs";
@@ -16,7 +16,9 @@ await Promise.all([page.waitForURL(/\/admin(?!\/login)/), page.click('button[typ
 await page.goto(base + "/admin/products?q=Insulated+Kids+Water+Bottle");
 const href = await page.locator('a[href^="/admin/products/"]').evaluateAll((as) => as.map((a) => a.getAttribute("href")).find((h) => /products\/[0-9a-f-]{36}/.test(h)));
 await page.goto(base + href, { waitUntil: "networkidle" });
-check("product with no image shows zero managed images", /Images \(0\)/.test(await page.locator("main").innerText()));
+const countOf = async () => Number((await page.locator("main").innerText()).match(/Images \((\d+)\)/)?.[1] ?? -1);
+const before = await countOf();
+check("product page lists its images", before >= 0, `before=${before}`);
 await page.setInputFiles("#up-file", tmp);
 await page.selectOption("#up-st", "ADMIN_UPLOAD");
 await page.fill("#up-sn", "Smoke test file");
@@ -24,7 +26,7 @@ await page.locator('[data-testid="image-upload-form"] button[type="submit"]').cl
 await page.waitForURL(/ok=/, { timeout: 20000 }).catch(() => {});
 await page.goto(base + href, { waitUntil: "networkidle" });
 const txt = await page.locator("main").innerText();
-check("upload succeeded and is listed", /Images \(1\)/.test(txt), txt.match(/Images \(\d+\)/)?.[0]);
+check("upload succeeded and is listed", (await countOf()) === before + 1 && txt.includes("Smoke test file"), `after=${await countOf()}`);
 const src = await page.locator('main img').first().getAttribute("src");
 const res = await fetch(base + "/product/insulated-kids-water-bottle");
 const html = await res.text();
@@ -38,10 +40,10 @@ await page.waitForURL(/error=/, { timeout: 20000 }).catch(() => {});
 check("fake image is rejected", /error=/.test(page.url()), decodeURIComponent(page.url().split("error=")[1] ?? "").slice(0, 80));
 // delete the test image
 await page.goto(base + href, { waitUntil: "networkidle" });
-await page.getByRole("button", { name: /^Delete$/ }).first().click();
+await page.locator("div.rounded-2xl", { hasText: "Smoke test file" }).filter({ has: page.getByRole("button", { name: /^Delete$/ }) }).last().getByRole("button", { name: /^Delete$/ }).click();
 await page.waitForURL(/ok=/, { timeout: 20000 }).catch(() => {});
 await page.goto(base + href, { waitUntil: "networkidle" });
-check("test image deleted; placeholder again", /Images \(0\)/.test(await page.locator("main").innerText()));
+check("test image deleted; original image still present", (await countOf()) === before);
 await browser.close();
 console.log(`${results.filter(Boolean).length}/${results.length} passed`);
 process.exit(results.every(Boolean) ? 0 : 1);
