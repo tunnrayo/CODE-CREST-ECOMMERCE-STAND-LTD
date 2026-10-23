@@ -1,7 +1,7 @@
 import "server-only";
 import { cookies, headers } from "next/headers";
 import { redirect } from "next/navigation";
-import { forbidden, unauthorized } from "../http";
+import { clientIp, forbidden, unauthorized } from "../http";
 import { can, createSession, destroySession, getSessionUser, SESSION_COOKIE, type Permission, type Role, type SessionUser } from "./core";
 
 export async function getCurrentUser(): Promise<SessionUser | null> {
@@ -13,7 +13,7 @@ export async function startSession(user: SessionUser) {
   const h = await headers();
   const { token, expiresAt } = await createSession(user.id, user.role as Role, {
     userAgent: h.get("user-agent"),
-    ip: h.get("x-forwarded-for")?.split(",")[0]?.trim() ?? null,
+    ip: clientIp(h),
   });
   const jar = await cookies();
   jar.set(SESSION_COOKIE, token, {

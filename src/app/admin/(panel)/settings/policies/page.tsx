@@ -13,7 +13,7 @@ export default async function Policies({ searchParams }: { searchParams: SP }) {
   const [sp, rows] = await Promise.all([searchParams, listPolicies()]);
   return (
     <AdminPage title="Policy pages" searchParams={sp} actions={<Link href="/admin/settings" className="btn-ghost btn-sm">← Settings</Link>}>
-      <Notice kind="warning" title="Drafts need legal review">The seeded policies are working drafts containing [bracketed] items you must complete. Have them reviewed by a qualified Nigerian lawyer, then tick “Reviewed” to remove the draft banner from the public page.</Notice>
+      <Notice kind="warning" title="Policies are not yet marked reviewed">The seeded policies are working text that does not state a fixed return window, refund timeframe or fee. Add the terms you decide, have the policies reviewed by a qualified Nigerian lawyer, then tick “Reviewed” to record that. (Visitors no longer see a draft banner; this note is internal.)</Notice>
       {rows.map((p) => (
         <Panel key={p.slug} title={p.slug}>
           <form action={savePolicyAction} className="space-y-3">

@@ -106,5 +106,10 @@ export async function readJson(req: Request, maxBytes = 100_000): Promise<unknow
 
 export function clientIp(req: Request | Headers): string {
   const h = req instanceof Headers ? req : req.headers;
-  return (h.get("x-forwarded-for")?.split(",")[0] ?? h.get("x-real-ip") ?? "unknown").trim();
+  // X-Forwarded-For is appended to by each proxy, so the left-most entries are client-supplied and spoofable.
+  // Count TRUSTED_PROXY_HOPS entries from the right (default 1 = a single platform proxy such as Railway).
+  const hops = Math.max(1, Number(process.env.TRUSTED_PROXY_HOPS ?? 1) || 1);
+  const parts = (h.get("x-forwarded-for") ?? "").split(",").map((s) => s.trim()).filter(Boolean);
+  if (parts.length) return parts[Math.max(0, parts.length - hops)]!;
+  return (h.get("x-real-ip") ?? "unknown").trim();
 }

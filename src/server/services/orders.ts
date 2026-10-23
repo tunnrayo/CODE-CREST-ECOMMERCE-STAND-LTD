@@ -83,6 +83,9 @@ export async function createOrderFromCart(cartId: string, userId: string | null,
   const accessToken = crypto.randomBytes(24).toString("base64url");
 
   const result = await db.transaction(async (tx) => {
+    // Serialise concurrent checkouts of the same cart (double-click / retries): the second waits here,
+    // then finds the cart already emptied by the first and is rejected instead of creating a duplicate order.
+    await tx.execute(sql`select id from carts where id = ${cartId} for update`);
     const items = await tx.select().from(cartItems).where(eq(cartItems.cartId, cartId)).orderBy(asc(cartItems.createdAt));
     if (!items.length) throw badRequest("Your cart is empty.");
     const quote = await quoteLines(

@@ -50,7 +50,7 @@ All **125 products** come from the supplied catalogue document (`data/source/…
 
 ## Scripts
 `dev`, `build`, `start`, `lint`, `typecheck`, `test` (unit + HTTP API tests; API tests skip if no server is running at `TEST_BASE_URL`, default `http://localhost:3002`), `db:generate`, `db:migrate`, `db:seed`, `admin:create`, `images:apply` (re-link images to products), `images:verify` (audit; `-- --write` refreshes `docs/IMAGE_AUDIT.md`), `catalogue:verify`.
-Smoke scripts: `node scripts/smoke-store.mjs`, `node scripts/smoke-admin.mjs` (Playwright; need a running server and Chromium).
+Smoke scripts (need a running server; Playwright ones also need Chromium, set `CHROMIUM_PATH` if needed): `npm run smoke` (store + admin pages), `npm run smoke:security` (admin isolation / session / customer-privacy checks), `npm run smoke:orders` (checkout → admin fulfilment → tracking, cleans up after itself), `npm run smoke:crawl` (every public link at desktop/tablet/mobile). Load `.env` first, e.g. `set -a; . ./.env; set +a`. Login attempts are rate-limited per IP, so restart the dev server if you repeat these many times in a row.
 
 ## Deployment
 See `docs/DEPLOYMENT.md`. Output is `standalone`; any Node 20+ host with PostgreSQL works. Nothing has been deployed by this repository.

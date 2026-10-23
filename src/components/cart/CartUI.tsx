@@ -119,7 +119,7 @@ export function CartDrawer() {
   }, [drawerOpen, setDrawerOpen]);
 
   return (
-    <div className={clsx("fixed inset-0 z-50", drawerOpen ? "pointer-events-auto" : "pointer-events-none")} aria-hidden={!drawerOpen}>
+    <div className={clsx("fixed inset-0 z-50 overflow-hidden", drawerOpen ? "pointer-events-auto" : "pointer-events-none")} aria-hidden={!drawerOpen} inert={!drawerOpen}>
       <div className={clsx("absolute inset-0 bg-grey-900/40 transition-opacity", drawerOpen ? "opacity-100" : "opacity-0")} onClick={() => setDrawerOpen(false)} />
       <aside
         role="dialog"

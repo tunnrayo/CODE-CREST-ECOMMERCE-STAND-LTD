@@ -1,8 +1,10 @@
 /**
- * Starter policy text. Seeded as DRAFT (isReviewed = false). Items in
- * [square brackets] must be confirmed by Code Crest management before launch.
- * Editable in Admin → Settings → Policies. This is not legal advice — have a
- * qualified Nigerian legal adviser review before going live.
+ * Starter policy text (isReviewed = false until management marks it reviewed).
+ * Wording deliberately avoids fixed return windows, refund timeframes or fees
+ * that management has not decided; add them in Admin → Settings → Policies.
+ * Not legal advice — have a qualified Nigerian legal adviser review.
+ * LEGACY_POLICY_REPLACEMENTS upgrades earlier seeded text that contained
+ * internal [bracketed] placeholders (only exact matches are replaced).
  */
 export const POLICY_SEED = [
   {
@@ -21,7 +23,7 @@ Delivery timeframes depend on product availability, your location and our delive
 You can follow your order status on the Track Order page using your order reference and email address. Where a courier provides tracking information, we will share it with you.
 
 ## Failed deliveries
-Please make sure your phone number and address are correct. If a delivery cannot be completed, we will contact you to arrange another attempt. [Re-delivery charges, if any, to be confirmed.]
+Please make sure your phone number and address are correct. If a delivery cannot be completed, we will contact you to arrange another attempt. We will confirm any re-delivery arrangements with you.
 
 ## Questions
 Email us at codecrestecommercestand@gmail.com with your order reference.`,
@@ -33,7 +35,7 @@ Email us at codecrestecommercestand@gmail.com with your order reference.`,
 We want you to be happy with your purchase. If something is wrong with your order, contact us and we will help.
 
 ## Return window
-You may request a return within [number of days — to be confirmed] days of delivery, subject to the conditions below.
+You may request a return after delivery, subject to the conditions below. Contact us as soon as possible with your order reference, and we will confirm the return window that applies to your item.
 
 ## Conditions
 - Items must be unused, in their original packaging, with all accessories and documentation.
@@ -41,10 +43,10 @@ You may request a return within [number of days — to be confirmed] days of del
 - Items damaged through misuse are not eligible.
 
 ## Faulty, damaged or incorrect items
-If an item arrives damaged, faulty or different from what you ordered, contact us within [number of days — to be confirmed] days of delivery with your order reference and photos. We will arrange a replacement, repair or refund as appropriate.
+If an item arrives damaged, faulty or different from what you ordered, contact us as soon as possible after delivery with your order reference and photos. We will arrange a replacement, repair or refund as appropriate.
 
 ## Refunds
-Approved refunds are made to the original payment method. Card and bank refunds are processed through our payment provider; the time it takes to reach your account depends on your bank. [Refund processing timeframe to be confirmed.]
+Approved refunds are made to the original payment method. Card and bank refunds are processed through our payment provider; the time it takes to reach your account depends on your bank. We will tell you the expected refund timeframe when your refund is approved.
 
 ## How to start a return
 Email codecrestecommercestand@gmail.com with your order reference, the item, and the reason for the return.`,
@@ -74,7 +76,7 @@ Under the Nigeria Data Protection Act 2023 you may request access to, correction
 We keep order records for as long as required for accounting and legal purposes, and other data only as long as needed for the purposes above.
 
 ## Cookies
-We use essential cookies to keep you signed in and to remember your cart. [Analytics cookies, if introduced, will be described here.]
+We use essential cookies to keep you signed in and to remember your cart. If we introduce analytics cookies in future, we will update this policy.
 
 ## Updates
 We may update this policy. The latest version will always be on this page.`,
@@ -112,4 +114,27 @@ These terms are governed by the laws of the Federal Republic of Nigeria.
 ## Contact
 codecrestecommercestand@gmail.com`,
   },
+];
+
+export const LEGACY_POLICY_REPLACEMENTS: [string, string][] = [
+  [
+    "[Re-delivery charges, if any, to be confirmed.]",
+    "We will confirm any re-delivery arrangements with you."
+  ],
+  [
+    "You may request a return within [number of days — to be confirmed] days of delivery, subject to the conditions below.",
+    "You may request a return after delivery, subject to the conditions below. Contact us as soon as possible with your order reference, and we will confirm the return window that applies to your item."
+  ],
+  [
+    "contact us within [number of days — to be confirmed] days of delivery with your order reference and photos.",
+    "contact us as soon as possible after delivery with your order reference and photos."
+  ],
+  [
+    "[Refund processing timeframe to be confirmed.]",
+    "We will tell you the expected refund timeframe when your refund is approved."
+  ],
+  [
+    "[Analytics cookies, if introduced, will be described here.]",
+    "If we introduce analytics cookies in future, we will update this policy."
+  ]
 ];

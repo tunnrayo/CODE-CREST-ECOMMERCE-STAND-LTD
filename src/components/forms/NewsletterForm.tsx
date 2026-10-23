@@ -26,8 +26,8 @@ export function NewsletterForm() {
     >
       <div className="flex flex-col gap-2 sm:flex-row">
         <label htmlFor="newsletter-email" className="sr-only">Email address</label>
-        <input id="newsletter-email" name="email" type="email" required placeholder="Your email address" className="h-12 flex-1 rounded-full border-0 px-5 text-sm text-grey-900 focus:outline-none focus:ring-2 focus:ring-lime" />
-        <button className="btn-primary h-12 px-7" disabled={state.status === "busy"}>
+        <input id="newsletter-email" name="email" type="email" required placeholder="Your email address" className="h-12 w-full min-w-0 flex-1 rounded-full border-0 px-5 text-sm text-grey-900 focus:outline-none focus:ring-2 focus:ring-lime" />
+        <button className="btn-primary h-12 shrink-0 px-7" disabled={state.status === "busy"}>
           {state.status === "busy" && <Loader2 className="h-4 w-4 animate-spin" />} Subscribe
         </button>
       </div>

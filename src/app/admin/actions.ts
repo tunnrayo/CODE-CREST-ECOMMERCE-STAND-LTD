@@ -8,7 +8,7 @@ import { ZodError } from "zod";
 import { eq } from "drizzle-orm";
 import { authenticate, can, hashPassword, type Permission, type Role } from "@/server/auth/core";
 import { endSession, requireAdminPage, startSession } from "@/server/auth/current";
-import { ApiError } from "@/server/http";
+import { ApiError, clientIp } from "@/server/http";
 import { rateLimit } from "@/server/rate-limit";
 import { db } from "@/server/db";
 import { contactMessages, shippingMethods, shippingZones, users } from "@/server/db/schema";
@@ -101,7 +101,7 @@ async function run(perm: Permission, fd: FormData, fallback: string, fn: (actor:
 /* ───────── auth ───────── */
 export async function adminLoginAction(_: AdminFormState, fd: FormData): Promise<AdminFormState> {
   const h = await headers();
-  const ip = h.get("x-forwarded-for")?.split(",")[0]?.trim() ?? "unknown";
+  const ip = clientIp(h);
   if (!rateLimit(`admin-login:${ip}`, 8, 15 * 60_000).allowed) return { error: "Too many attempts. Please wait 15 minutes." };
   const email = str(fd, "email").slice(0, 200);
   const password = String(fd.get("password") ?? "").slice(0, 200);

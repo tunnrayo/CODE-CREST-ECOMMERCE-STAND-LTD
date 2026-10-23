@@ -17,7 +17,7 @@ import { applyImages } from "./apply-images";
 import { categories, policyPages, products, promotions, shippingMethods, shippingZones, storeSettings } from "../src/server/db/schema";
 import { CATEGORY_DEFS } from "../src/lib/catalogue-rules";
 import { DEFAULT_SETTINGS } from "../src/server/services/settings";
-import { POLICY_SEED } from "../data/policies";
+import { LEGACY_POLICY_REPLACEMENTS, POLICY_SEED } from "../data/policies";
 import type { CatalogueRecord } from "./import-catalogue";
 
 const FEATURED = new Set(["CC-ELE-002", "CC-ELE-005", "CC-HOM-005", "CC-FAS-002", "CC-BEA-006", "CC-OFF-009", "CC-BAB-003", "CC-SPO-001"]);
@@ -127,6 +127,10 @@ async function main() {
 
   for (const p of POLICY_SEED) {
     await db.insert(policyPages).values({ ...p, isReviewed: false }).onConflictDoNothing();
+  }
+  // Replace internal [bracketed] placeholders left by earlier seeds (exact-match only; edited text is untouched).
+  for (const [from, to] of LEGACY_POLICY_REPLACEMENTS) {
+    await db.update(policyPages).set({ body: sql`replace(${policyPages.body}, ${from}, ${to})` }).where(sql`position(${from} in ${policyPages.body}) > 0`);
   }
 
   const img = await applyImages();

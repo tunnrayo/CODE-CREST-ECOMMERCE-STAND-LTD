@@ -2,7 +2,7 @@
   "name": "code-crest-ecommerce",
   "version": "1.0.0",
   "private": true,
-  "description": "Code Crest Ecommerce Stand Ltd — e-commerce platform (Next.js, TypeScript, PostgreSQL)",
+  "description": "Code Crest Ecommerce Stand Ltd \u2014 e-commerce platform (Next.js, TypeScript, PostgreSQL)",
   "engines": {
     "node": ">=20"
   },
@@ -22,7 +22,10 @@
     "images:apply": "tsx scripts/apply-images.ts",
     "images:verify": "tsx scripts/verify-images.ts",
     "catalogue:verify": "tsx scripts/verify-catalogue.ts",
-    "setup": "npm run db:migrate && npm run db:seed && npm run admin:create"
+    "setup": "npm run db:migrate && npm run db:seed && npm run admin:create",
+    "smoke:security": "node scripts/smoke-admin-security.mjs",
+    "smoke:orders": "node scripts/smoke-orders.mjs",
+    "smoke:crawl": "node scripts/smoke-crawl.mjs"
   },
   "dependencies": {
     "@fontsource/poppins": "^5.3.0",

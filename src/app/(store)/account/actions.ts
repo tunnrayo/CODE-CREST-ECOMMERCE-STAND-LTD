@@ -6,7 +6,7 @@ import { revalidatePath } from "next/cache";
 import { ZodError } from "zod";
 import { authenticate } from "@/server/auth/core";
 import { endSession, getCurrentUser, requireUser, startSession } from "@/server/auth/current";
-import { ApiError } from "@/server/http";
+import { ApiError, clientIp } from "@/server/http";
 import { rateLimit } from "@/server/rate-limit";
 import { addAddress, changePassword, deleteAddress, registerCustomer, requestPasswordReset, resetPassword, updateProfile } from "@/server/services/accounts";
 
@@ -24,7 +24,7 @@ function toState(e: unknown): FormState {
 
 async function ip() {
   const h = await headers();
-  return h.get("x-forwarded-for")?.split(",")[0]?.trim() ?? "unknown";
+  return clientIp(h);
 }
 
 function safeNext(next: FormDataEntryValue | null, fallback: string) {
